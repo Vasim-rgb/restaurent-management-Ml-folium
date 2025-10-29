@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, jsonify
 import joblib
 import pandas as pd
 import numpy as np
+import json
 from scipy.sparse import hstack
 
 task3_bp = Blueprint('task3', __name__, template_folder='templates', static_folder='static')
@@ -89,3 +90,12 @@ def predict():
     predicted_class = label_encoder.inverse_transform(pred)[0]
 
     return jsonify({"prediction": predicted_class})
+
+
+@task3_bp.route("/metrics")
+def metrics():
+    with open("TASK_3/metrics.json", "r") as f:
+        metrics_data = json.load(f)
+    return jsonify(metrics_data)
+
+

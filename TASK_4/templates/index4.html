@@ -7,33 +7,94 @@
   <style>
     body { background: #f8f9fa; padding: 30px; }
     h1 { color: #003366; margin-bottom: 30px; }
-    img { border-radius: 8px; margin: 15px 0; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    img { border-radius: 8px; margin: 15px 0; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 100%; height: auto; }
     iframe { width: 100%; height: 600px; border: none; border-radius: 10px; }
+    .insights { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-top: 30px; }
+    .insights h3 { color: #003366; }
+    .insights ul { list-style-type: none; padding: 0; }
+    .insights li { margin-bottom: 10px; }
   </style>
 </head>
 <body>
-  <div class="container text-center">
-    <h1>📍 Restaurant Geographical Analysis Dashboard</h1>
+  <div class="container">
+    <h1 class="text-center">📍 Restaurant Geographical Analysis Dashboard</h1>
 
     <div class="mb-4">
-      <h3>Interactive Restaurant Map</h3>
-      <!-- Embed your Folium map here -->
-      <iframe src="{{ url_for('static', filename='restaurants_map.html') }}"></iframe>
+      <h3 class="text-center">Interactive Restaurant Map</h3>
+      <iframe src="{{ url_for('task4.static', filename='restaurants_map.html') }}"></iframe>
     </div>
 
-    <p class="text-muted mt-4">© TASK-4 Restaurant Analysis | Flask Dashboard</p>
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h3 class="text-center">Top 10 Cities with Most Restaurants</h3>
+        <img src="{{ url_for('task4.static', filename='top_cities.png') }}" alt="Top Cities Plot">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h3 class="text-center">Top 10 Cities by Average Rating</h3>
+        <img src="{{ url_for('task4.static', filename='top_rated.png') }}" alt="Top Rated Plot">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <h3 class="text-center">Top 10 Localities with Most Restaurants</h3>
+        <img src="{{ url_for('task4.static', filename='top_localities.png') }}" alt="Top Localities Plot">
+      </div>
+      <div class="col-md-6 mb-4">
+        <h3 class="text-center">Rating Distribution in Top 10 Cities</h3>
+        <img src="{{ url_for('task4.static', filename='rating_distribution.png') }}" alt="Rating Distribution Plot">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 mb-4">
+        <h3 class="text-center">Price Range Distribution in Top 10 Cities</h3>
+        <img src="{{ url_for('task4.static', filename='price_distribution.png') }}" alt="Price Distribution Plot">
+      </div>
+    </div>
+
+    <div class="insights">
+      <h3>🔍 Key Insights from the Analysis</h3>
+      <ul>
+        <li><strong>Total Restaurants Analyzed:</strong> {{ metrics.total_restaurants }}</li>
+        <li><strong>Unique Cities:</strong> {{ metrics.unique_cities }}</li>
+        <li><strong>Unique Countries:</strong> {{ metrics.unique_countries }}</li>
+        <li><strong>Unique Cuisines:</strong> {{ metrics.unique_cuisines }}</li>
+        <li><strong>Average Rating:</strong> {{ "%.2f"|format(metrics.average_rating) }} (Median: {{ "%.2f"|format(metrics.median_rating) }})</li>
+        <li><strong>Rating Range:</strong> {{ "%.1f"|format(metrics.min_rating) }} - {{ "%.1f"|format(metrics.max_rating) }} (Std Dev: {{ "%.2f"|format(metrics.rating_std_dev) }})</li>
+        <li><strong>Rating Percentiles:</strong> 25th: {{ "%.1f"|format(metrics.rating_25th_percentile) }}, 75th: {{ "%.1f"|format(metrics.rating_75th_percentile) }}, 90th: {{ "%.1f"|format(metrics.rating_90th_percentile) }}</li>
+        <li><strong>Top City by Restaurant Count:</strong> {{ metrics.top_city_by_count }} ({{ metrics.top_city_count }} restaurants)</li>
+        <li><strong>Top City by Average Rating:</strong> {{ metrics.top_city_by_rating }} ({{ "%.2f"|format(metrics.top_city_rating) }} stars)</li>
+        <li><strong>Top Locality by Restaurant Count:</strong> {{ metrics.top_locality_by_count }} ({{ metrics.top_locality_count }} restaurants)</li>
+        <li><strong>Most Common Cuisine:</strong> {{ metrics.most_common_cuisine }}</li>
+        <li><strong>Cuisine Diversity:</strong> {{ "%.1f"|format(metrics.average_cuisine_diversity_per_city) }} per city, {{ "%.1f"|format(metrics.average_cuisine_diversity_per_country) }} per country</li>
+        <li><strong>Price vs Rating Correlation:</strong> {{ "%.3f"|format(metrics.price_rating_correlation) }}</li>
+        <li><strong>Price Range Distribution:</strong> 1: {{ metrics.price_range_1_count }}, 2: {{ metrics.price_range_2_count }}, 3: {{ metrics.price_range_3_count }}, 4: {{ metrics.price_range_4_count }}</li>
+        <li><strong>Cities with High-Rated Restaurants:</strong> {{ metrics.cities_with_high_rated_restaurants }}</li>
+        <li><strong>Most Concentrated High-Rated City:</strong> {{ metrics.most_concentrated_city }} ({{ "%.1f"|format(metrics.highest_concentration_percentage) }}% high-rated)</li>
+        <li><strong>Service Availability:</strong> Table Booking: {{ "%.1f"|format(metrics.percentage_with_table_booking) }}%, Online Delivery: {{ "%.1f"|format(metrics.percentage_with_online_delivery) }}%</li>
+        <li><strong>Countries with Services:</strong> Table Booking: {{ metrics.countries_with_table_booking }}, Online Delivery: {{ metrics.countries_with_online_delivery }}</li>
+        <li><strong>Top Country by Restaurants:</strong> {{ metrics.top_country_by_restaurants }} ({{ metrics.top_country_restaurant_count }} restaurants)</li>
+        <li><strong>Total Votes:</strong> {{ "{:,}".format(metrics.total_votes) }} (Average: {{ "%.0f"|format(metrics.average_votes) }})</li>
+        <li><strong>Geographical Spread:</strong> Lat Range: {{ "%.2f"|format(metrics.latitude_range) }}, Long Range: {{ "%.2f"|format(metrics.longitude_range) }}</li>
+        <li><strong>Average City Spread:</strong> {{ "%.4f"|format(metrics.average_city_spread) }} degrees from center</li>
+      </ul>
+    </div>
+
+    <div class="insights" style="margin-top: 20px;">
+      <h3>🏆 Top 5 Most Voted Restaurants</h3>
+      <ul>
+        {% for restaurant in metrics.top_voted_restaurants %}
+        <li><strong>{{ restaurant['Restaurant Name'] }}</strong> ({{ restaurant['City'] }}) - {{ "{:,}".format(restaurant['Votes']) }} votes, Rating: {{ "%.1f"|format(restaurant['Aggregate rating']) }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+ 
+
+    <p class="text-muted text-center mt-4">© TASK-4 Restaurant Analysis | Flask Dashboard</p>
   </div>
 
-    <div class="mb-4">
-      <h3>Top 10 Cities with Most Restaurants</h3>
-      <img src="{{ url_for('static', filename='top_cities.png') }}" width="600" alt="Top Cities Plot">
-    </div>
-
-    <div class="mb-4">
-      <h3>Top 10 Cities by Average Rating</h3>
-      <img src="{{ url_for('static', filename='top_rated.png') }}" width="600" alt="Top Rated Plot">
-    </div>
-
-    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

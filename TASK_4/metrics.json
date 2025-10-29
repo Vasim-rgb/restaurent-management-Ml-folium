@@ -2,19 +2,127 @@
     "total_restaurants": 9551,
     "unique_cities": 141,
     "unique_countries": 15,
+    "unique_cuisines": 145,
     "average_rating": 2.66637001361114,
     "median_rating": 3.2,
     "min_rating": 0.0,
     "max_rating": 4.9,
+    "rating_std_dev": 1.5163775396521686,
+    "rating_25th_percentile": 2.5,
+    "rating_75th_percentile": 3.7,
+    "rating_90th_percentile": 4.1,
+    "rating_95th_percentile": 4.3,
     "average_price_range": 1.804837189823055,
     "median_price_range": 2.0,
+    "average_cost_for_two": 1199.2107632708617,
+    "median_cost_for_two": 400.0,
+    "price_rating_correlation": 0.43794414930184206,
     "total_votes": 1498645,
     "average_votes": 156.909747670401,
+    "percentage_with_table_booking": 12.124384881164275,
+    "percentage_with_online_delivery": 25.662234321013504,
+    "percentage_delivering_now": 0.35598366663176634,
     "top_city_by_count": "New Delhi",
     "top_city_count": 5473,
     "top_city_by_rating": "Inner City",
     "top_city_rating": 4.9,
+    "top_locality_by_count": "Connaught Place, New Delhi",
+    "top_locality_count": 122,
+    "most_common_cuisine": "North Indian",
+    "average_cuisine_diversity_per_city": 13.120567375886525,
+    "average_cuisine_diversity_per_country": 31.2,
     "map_center_lat": 25.854380700074756,
     "map_center_long": 64.12657446168706,
-    "sampled_points_on_map": 500
+    "sampled_points_on_map": 1000,
+    "latitude_range": 97.307408,
+    "longitude_range": 332.7805753,
+    "average_city_spread": 7.741363501033932,
+    "cities_with_high_rated_restaurants": 120,
+    "average_high_rated_concentration": 82.93328266568616,
+    "most_concentrated_city": "Athens",
+    "highest_concentration_percentage": 100.0,
+    "average_rating_variance_across_cities": 0.2816068482766081,
+    "average_price_variance_across_cities": 0.5318857365192526,
+    "average_geographical_spread_lat": 24.58913935343298,
+    "average_geographical_spread_long": 269.8241361231123,
+    "top_country_by_restaurants": "1",
+    "top_country_restaurant_count": 8652,
+    "countries_with_table_booking": 6,
+    "countries_with_online_delivery": 2,
+    "price_range_1_count": 4444,
+    "price_range_2_count": 3113,
+    "price_range_3_count": 1408,
+    "price_range_4_count": 586,
+    "rating_color_distribution": {
+        "Orange": 3737,
+        "White": 2148,
+        "Yellow": 2100,
+        "Green": 1079,
+        "Dark Green": 301,
+        "Red": 186
+    },
+    "top_voted_restaurants": [
+        {
+            "Restaurant Name": "Toit",
+            "City": "Bangalore",
+            "Votes": 10934,
+            "Aggregate rating": 4.8
+        },
+        {
+            "Restaurant Name": "Truffles",
+            "City": "Bangalore",
+            "Votes": 9667,
+            "Aggregate rating": 4.7
+        },
+        {
+            "Restaurant Name": "Hauz Khas Social",
+            "City": "New Delhi",
+            "Votes": 7931,
+            "Aggregate rating": 4.3
+        },
+        {
+            "Restaurant Name": "Peter Cat",
+            "City": "Kolkata",
+            "Votes": 7574,
+            "Aggregate rating": 4.3
+        },
+        {
+            "Restaurant Name": "AB's - Absolute Barbecues",
+            "City": "Bangalore",
+            "Votes": 6907,
+            "Aggregate rating": 4.6
+        }
+    ],
+    "highest_rated_cities": {
+        "Aggregate rating": {
+            "Inner City": 4.9,
+            "Quezon City": 4.8,
+            "Makati City": 4.65,
+            "Pasig City": 4.633333333333334,
+            "Mandaluyong City": 4.625
+        },
+        "Restaurant Count": {
+            "Inner City": 2,
+            "Quezon City": 1,
+            "Makati City": 2,
+            "Pasig City": 3,
+            "Mandaluyong City": 4
+        }
+    },
+    "lowest_rated_cities": {
+        "Aggregate rating": {
+            "Faridabad": 1.8669322709163347,
+            "Noida": 2.0362037037037037,
+            "Mc Millan": 2.4,
+            "Montville": 2.4,
+            "New Delhi": 2.4388452402704184
+        },
+        "Restaurant Count": {
+            "Faridabad": 251,
+            "Noida": 1080,
+            "Mc Millan": 1,
+            "Montville": 1,
+            "New Delhi": 5473
+        }
+    }
 }
