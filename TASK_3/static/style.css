@@ -1,0 +1,108 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f8cdda, #1d2b64);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 80%;
+  max-width: 900px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #ffdf6c;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #fefefe;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+input, select {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 1rem;
+  transition: transform 0.2s;
+}
+
+input:focus, select:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px #ffd700;
+}
+
+.btn {
+  margin-top: 25px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #f6d365, #fda085);
+}
+
+.result-box {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+#prediction-text {
+  font-size: 1.6rem;
+  color: #00ffb7;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}

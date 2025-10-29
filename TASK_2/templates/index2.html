@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍽️ Restaurant Recommendation System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #dfe9f3);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        label {
+            font-weight: bold;
+            color: #34495e;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍴 Restaurant Recommendation System</h1>
+        <form action="/task2/predict" method="POST">
+
+            <label for="cuisine">Preferred Cuisine:</label>
+            <input type="text" name="cuisine" placeholder="e.g., Japanese, Italian" required>
+
+            <label for="city">City:</label>
+            <input type="text" name="city" placeholder="e.g., Makati City" required>
+
+            <label for="price_range">Price Range (1-4):</label>
+            <input type="number" name="price_range" placeholder="e.g., 3" min="1" max="4" required>
+
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if prediction_table %}
+        <h2 style="text-align:center; color:#27ae60;">Top 5 Recommended Restaurants</h2>
+        <div>{{ prediction_table | safe }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

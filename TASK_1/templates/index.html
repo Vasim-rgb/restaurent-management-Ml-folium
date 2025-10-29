@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Rating Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e8f0fe);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+            color: #34495e;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Restaurant Rating Prediction</h1>
+        <form action="/task1/predict" method="post">
+            
+            <label for="Country Code">Country Code:</label>
+            <input type="text" name="Country Code" placeholder="e.g., 162" required>
+
+            <label for="City">City:</label>
+            <input type="text" name="City" placeholder="e.g., Makati City" required>
+
+            <label for="Locality">Locality:</label>
+            <input type="text" name="Locality" placeholder="e.g., Legaspi Village" required>
+
+            <label for="Longitude">Longitude:</label>
+            <input type="number" step="any" name="Longitude" placeholder="e.g., 121.0275" required>
+
+            <label for="Latitude">Latitude:</label>
+            <input type="number" step="any" name="Latitude" placeholder="e.g., 14.5654" required>
+
+            <label for="Cuisines">Cuisines:</label>
+            <input type="text" name="Cuisines" placeholder="e.g., Japanese, Desserts" required>
+
+            <label for="Average Cost for two">Average Cost for two:</label>
+            <input type="number" name="Average Cost for two" placeholder="e.g., 1200" required>
+
+            <label for="Currency">Currency:</label>
+            <input type="text" name="Currency" placeholder="e.g., Botswana Pula(P)" required>
+
+            <label for="Has Table booking">Has Table booking:</label>
+            <select name="Has Table booking" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="Has Online delivery">Has Online delivery:</label>
+            <select name="Has Online delivery" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="Is delivering now">Is delivering now:</label>
+            <select name="Is delivering now" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="Switch to order menu">Switch to order menu:</label>
+            <select name="Switch to order menu" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="Price range">Price range:</label>
+            <input type="number" name="Price range" placeholder="1-4" min="1" max="4" required>
+
+            <label for="Votes">Votes:</label>
+            <input type="number" name="Votes" placeholder="e.g., 365" required>
+
+            <button type="submit">Predict Rating</button>
+        </form>
+
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>

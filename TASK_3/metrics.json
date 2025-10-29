@@ -1,0 +1,35 @@
+{
+    "Original Dataset Shape": [
+        8361,
+        22
+    ],
+    "Filtered Dataset Shape": [
+        8361,
+        31
+    ],
+    "Number of Unique Cuisines": 18,
+    "Number of Classes": 18,
+    "Test Size": 0.2,
+    "Accuracy": 0.9826658696951583,
+    "Precision": 0.9827706471388938,
+    "Recall": 0.9826658696951583,
+    "F1 Score": 0.9824715105333038,
+    "Number of Numeric Features": 10,
+    "Number of Categorical Features": 9,
+    "TF-IDF Max Features": 5000,
+    "Processed Features Shape": [
+        8361,
+        4824
+    ],
+    "Train Set Size": 6688,
+    "Test Set Size": 1673,
+    "Model Parameters": {
+        "n_estimators": 300,
+        "learning_rate": 0.05,
+        "num_leaves": 50,
+        "reg_alpha": 0.1,
+        "reg_lambda": 0.1,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8
+    }
+}

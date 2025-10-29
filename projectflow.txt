@@ -1,0 +1,121 @@
+# Restaurant Analytics Multi-Task Application - Project Flow
+
+## Overview
+This is a Flask-based web application with 4 different restaurant analytics tasks:
+- TASK_1: Restaurant Rating Prediction (Random Forest)
+- TASK_2: Restaurant Recommendation System (Content-Based Filtering)
+- TASK_3: Cuisine Classification (LightGBM)
+- TASK_4: Restaurant Data Visualization & Analytics
+
+## Project Structure
+```
+├── main_app.py                 # Main Flask application
+├── templates/
+│   └── home.html              # Home page template
+├── TASK_1/                    # Rating Prediction
+├── TASK_2/                    # Recommendation System
+├── TASK_3/                    # Cuisine Classification
+├── TASK_4/                    # Data Visualization
+└── projectflow.txt           # This file
+```
+
+## Prerequisites
+- Python 3.8+
+- Required libraries: flask, pandas, numpy, scikit-learn, lightgbm, matplotlib, seaborn, folium, joblib
+
+## Installation & Setup
+1. Ensure you have Python 3.8+ installed
+2. Install required packages:
+   ```
+   pip install flask pandas numpy scikit-learn lightgbm matplotlib seaborn folium joblib
+   ```
+
+3. Place the "Dataset .csv" file in the root directory (for TASK_4) and ensure it's accessible
+
+## Training Models (Optional - Pre-trained models included)
+If you want to retrain the models:
+
+### TASK_1 - Rating Prediction
+```bash
+cd TASK_1
+python main.py
+```
+This will train the Random Forest model and save it as `random_forest_model.pkl`
+
+### TASK_2 - Recommendation System
+```bash
+cd TASK_2
+python main.py
+```
+This will create TF-IDF vectors and save recommendation data
+
+### TASK_3 - Cuisine Classification
+```bash
+cd TASK_3
+python main.py
+```
+This will train the LightGBM model and save it as `cuisine_lightgbm_model.joblib`
+
+### TASK_4 - Data Visualization
+```bash
+cd TASK_4
+python main.py
+```
+This will generate plots and map visualizations
+
+## Running the Application
+1. From the root directory, run:
+   ```bash
+   python main_app.py
+   ```
+
+2. Open your browser and navigate to: http://127.0.0.1:5000
+
+## Application URLs
+- Home Page: http://127.0.0.1:5000/
+- Task 1 (Rating Prediction): http://127.0.0.1:5000/task1/
+- Task 2 (Recommendations): http://127.0.0.1:5000/task2/
+- Task 3 (Cuisine Classification): http://127.0.0.1:5000/task3/
+- Task 4 (Analytics & Maps): http://127.0.0.1:5000/task4/
+
+## Task Descriptions
+
+### TASK_1: Restaurant Rating Prediction
+- **Input**: Restaurant details (location, cuisines, price range, etc.)
+- **Output**: Predicted aggregate rating (0-5 scale)
+- **Model**: Random Forest Regressor
+- **Accuracy**: ~96% R² score
+
+### TASK_2: Restaurant Recommendation System
+- **Input**: Preferred cuisine, city, price range
+- **Output**: Top 5 recommended restaurants with details
+- **Method**: Content-based filtering using TF-IDF similarity
+
+### TASK_3: Cuisine Classification
+- **Input**: Restaurant details and features
+- **Output**: Predicted primary cuisine type
+- **Model**: LightGBM Classifier
+- **Accuracy**: ~98%
+
+### TASK_4: Data Visualization & Analytics
+- **Features**: Interactive map, city-wise statistics, rating distributions
+- **Visualizations**: Bar charts for top cities, rating analysis, restaurant locations
+
+## Notes
+- The application uses Flask blueprints for modular design
+- Pre-trained models are included, so you can run the app immediately
+- Static files (CSS, JS, images) are served from each task's static folder
+- The app runs in debug mode with auto-reload enabled
+- All models were trained on the "Dataset .csv" restaurant dataset
+
+## Troubleshooting
+- If you get sklearn version warnings, they are harmless but you can update sklearn if needed
+- Ensure all required files are in their respective directories
+- Check that the dataset file is accessible for TASK_4
+- Port 5000 should be available (change in main_app.py if needed)
+
+## API Endpoints (for direct API access)
+- POST /task1/predict - Rating prediction
+- POST /task2/predict - Restaurant recommendations
+- POST /task3/predict - Cuisine classification
+- GET /task4/ - Analytics dashboard

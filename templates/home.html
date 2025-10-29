@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RestoVision | AI Restaurant Insights</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+      margin: 0;
+      color: #333;
+      min-height: 100vh;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      text-shadow: 3px 3px 8px rgba(3, 217, 255, 0.5);
+    }
+
+    .hero p.tagline {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 15px;
+      color: #f8f8f8ff;
+      background: rgba(255, 255, 255, 0.15);
+      display: inline-block;
+      padding: 6px 15px;
+      border-radius: 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin: 50px auto 30px;
+      max-width: 950px;
+      color: white;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: white;
+    }
+
+    .section {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 30px; padding: 40px 20px 80px;
+    }
+
+    .card {
+      width: 320px; border: none; border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-body {
+      text-align: center; padding: 30px 20px;
+    }
+
+    .card-title {
+      font-size: 1.4rem; font-weight: 600; color: #2c3e50;
+    }
+
+    .card-text {
+      font-size: 0.95rem; color: #555; margin-top: 10px; min-height: 60px;
+    }
+
+    .btn-custom {
+      background-color: #007bff; border: none; border-radius: 25px;
+      color: white; padding: 10px 25px; font-weight: 500; transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #003366;
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HERO SECTION -->
+
+    
+      <h1>🍽 RestoVision</h1>
+      <p class="tagline">AI-powered insights for restaurant performance, recommendations & analysis</p>
+    
+  
+
+  <!-- INTRO SECTION -->
+  <div class="intro">
+    <h2 style="font-weight: 600;">Welcome to RestoVision</h2>
+    <p>
+      <b>RestoVision</b> is your intelligent companion for the modern food industry. 
+      Our AI-driven platform helps restaurant owners, data enthusiasts, and diners 
+      uncover powerful insights — from predicting customer ratings to identifying 
+      trending cuisines and optimizing location strategies. 
+      <br>
+    </p>
+  </div>
+
+  <!-- FEATURE SECTION -->
+  <div class="section">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">⭐ Predict Ratings</h5>
+        <p class="card-text">Predict restaurant ratings using regression models trained on key performance indicators.</p>
+        <a href="/task1" class="btn btn-custom">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">🍲 Recommendations</h5>
+        <p class="card-text">Discover restaurant suggestions tailored to your dining style and preferences.</p>
+        <a href="/task2" class="btn btn-custom">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">🍴 Cuisine Classifier</h5>
+        <p class="card-text">Classify restaurants into cuisine categories using advanced ML classification models.</p>
+        <a href="/task3" class="btn btn-custom">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">🌍 Geo Analysis</h5>
+        <p class="card-text">Visualize restaurant density, popularity, and insights across regions using geospatial analytics.</p>
+        <a href="/task4" class="btn btn-custom">Open App</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 RestoVision | Powered by Flask & Machine Learning</p>
+  </footer>
+</body>
+</html>

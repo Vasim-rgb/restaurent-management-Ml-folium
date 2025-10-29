@@ -1,0 +1,10 @@
+{
+    "Number of Restaurants": 9551,
+    "Number of Unique Cuisines": 1826,
+    "Average Price Range": 1.804837189823055,
+    "Number of TF-IDF Features": 280,
+    "Mean Cosine Similarity": 0.1603822998369295,
+    "Total Cities": 141,
+    "Average Rating": 2.66637001361114,
+    "Percentage with Online Delivery": 25.662234321013504
+}

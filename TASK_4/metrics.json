@@ -1,0 +1,20 @@
+{
+    "total_restaurants": 9551,
+    "unique_cities": 141,
+    "unique_countries": 15,
+    "average_rating": 2.66637001361114,
+    "median_rating": 3.2,
+    "min_rating": 0.0,
+    "max_rating": 4.9,
+    "average_price_range": 1.804837189823055,
+    "median_price_range": 2.0,
+    "total_votes": 1498645,
+    "average_votes": 156.909747670401,
+    "top_city_by_count": "New Delhi",
+    "top_city_count": 5473,
+    "top_city_by_rating": "Inner City",
+    "top_city_rating": 4.9,
+    "map_center_lat": 25.854380700074756,
+    "map_center_long": 64.12657446168706,
+    "sampled_points_on_map": 500
+}
